@@ -1,6 +1,6 @@
 ---
 title: "HRDX Vignette"
-author: "John Pluta"
+author: "John Pluta and Ryan Hausler"
 date: "8/28/2019"
 output: 
   html_document:
