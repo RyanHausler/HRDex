@@ -62,6 +62,8 @@ preprocessHRD <- function(seq.dat,  ref, minimum_break_length = 3e06) {
   # matches reference data to the correct chromosome in the subject data
   key <- match(seq.dat$chromosome, ref.dat$chromosome)
 
+  # Size of chromosome that segment is on
+  # TODO: eliminate redundancies
   seq.dat$chr.size <- ref.dat$chr.size[match(seq.dat$chromosome, ref.dat$chromosome)]
 
   seq.dat$AI <- (seq.dat$A > seq.dat$B) & (seq.dat$A != 1) & (seq.dat$B != 0)
