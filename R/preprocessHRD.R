@@ -49,7 +49,7 @@ preprocessHRD <- function(seq.dat,  ref, minimum_break_length = 3e06) {
     seq.dat <- subset(seq.dat, !is.na(seq.dat$CNt))
   }
 
-  levels(seq.dat$chromosome) <- levels(ref.dat$chromosome)
+  levels(seq.dat$chromosome) <- levels(as.factor(ref.dat$chromosome))
 
   # Percentage of the chromosome that segment contains
   seq.dat$seg.len <- seq.dat$end.pos - seq.dat$start.pos
