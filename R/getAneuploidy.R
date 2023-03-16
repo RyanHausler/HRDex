@@ -118,6 +118,7 @@ getAneuploidy <- function ( seq.dat, ploidy.dat, chr, ref = "grch37", max.brk.le
       {
         # Inf means no limit on break length- we ignore it in this case
         tmp <- combineSeg( dat[i:(i+1),], max.brk.len = Inf, ap.calc = TRUE)
+        print(tmp)
         
         # dont join segments across centromere
         if( !in.centromere(tmp$start.pos, tmp$end.pos, ref.cent.start, ref.cent.end))
