@@ -154,5 +154,5 @@ ap.dat <- getAneuploidyGenome(sub01.segments, sub01.ploidy)
 ap.dat[[1]]
 getAneuploidyScore(ap.dat[[1]])
 
-plotAneuploidy(ap.dat[[2]])
+#plotAneuploidy(ap.dat[[2]])
 ```

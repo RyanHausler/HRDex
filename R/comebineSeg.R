@@ -46,13 +46,15 @@ combineSeg <- function(seq.dat, max.brk.len = 3e06, ap.calc = FALSE) {
     # Get distance between end position of current segment
     # and start position of next segment
     seq.dat$brk.len[i + 1] <- seq.dat$start.pos[i + 1] - seq.dat$end.pos[i]
-
+    
     # for aneuploidy, join two adjacent segments if ap status
     # is the same and gap is less than max break length
     if(ap.calc == TRUE) {
+      max.brk.len = Inf
       if(seq.dat$a.stat[i + 1] == seq.dat$a.stat[i] &&
-          seq.dat$brk.len[i + 1] > 0 &&
+          seq.dat$brk.len[i + 1] >= 0 &&
           seq.dat$brk.len[i + 1] < max.brk.len) {
+        print("we made it")
         seq.dat$start.pos[i + 1] <- seq.dat$start.pos[i]
         rm.ind <- c(rm.ind, i)
       }
