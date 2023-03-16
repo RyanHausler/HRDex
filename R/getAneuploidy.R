@@ -188,7 +188,7 @@ getAneuploidy <- function ( seq.dat, ploidy.dat, chr, ref = "grch37", max.brk.le
   {
     if( any( q.dat$a.stat %in% c("Amplified", "Deleted")))
     {
-      len <- q.dat$s[ which(q.dat$s == max(q.dat$s[q.dat$a.stat %in% c("Amplified", "Deleted")])) ]
+      len <- q.dat$s[ which(q.dat$s == max(q.dat$s[q.dat$a.stat %in% c("Amplified", "Deleted")]))[1] ]
       if( (len / q.arm.len) > .8) { q.aneuploid = TRUE }
     }
   }
