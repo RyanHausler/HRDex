@@ -28,6 +28,7 @@ preprocessHRD <- function(seq.dat,  ref, minimum_break_length = 3e06) {
     ref.dat <- grch37.ref.dat
   } else if(ref == "grch38") {
     ref.dat <- grch38.ref.dat
+    seq.dat$chromosome = gsub("chr", "", seq.dat$chromosome)
   } else {
     print(paste(ref, "is not a valid reference genome.", sep = " "))
       stop("select one of: grch37, grch38")
